@@ -2,6 +2,7 @@
 const express = require("express");
 //Importing BodyParser.js module
 const bodyParser = require("body-parser");
+const cors = require("cors")
 
 /**
  * Class Definition for the REST API
@@ -24,6 +25,7 @@ class BlockAPI {
      */
 	initExpress() {
 		this.app.set("port", 8000);
+		this.app.use(cors({origin:"http://localhost:3000"}));
 	}
 
     /**
